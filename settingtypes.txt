@@ -1,0 +1,8 @@
+# If enabled, stickbugs can be crafted together for hilarity.
+wc_bugs.toofar (Take the joke too far) bool true
+
+# If enabled, dangerous lodewurms based on kimapr's 'nc_snakes' can be found undergroud. 
+wc_bugs.tremors (Lodewurms) bool true
+
+# If enabled, wood-eating termites will appear in your worlds. 
+wc_bugs.termites (Termites) bool true

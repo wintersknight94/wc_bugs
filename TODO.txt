@@ -1,0 +1,15 @@
+<><><><><> WC BUGS TODO LIST <><><><><>
+
+- make /killbugs command work on adzebugs & rakebugs
+- make / killbugs command accept an integer for distance (currently set to 20) 
+- make prillbugs and peatles change facedir to match movement vector
+- make leeches attach themselves when player is swimming
+- make damage only remove leeches when not in water
+- make peatles hide within soil nodes
+- add luxmoth chrysalis (and possibly larvae)
+- either deprecate or functionalize still/calm luxmoth
+- rework prillbug species
+- add prillbug functionality/generation
+- add lodewurm nodes
+- lodewurm behavior (nc_snake-esc, burrowing)
+- prillbug and peatle escapades
