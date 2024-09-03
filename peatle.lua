@@ -1,6 +1,6 @@
 -- LUALOCALS < ---------------------------------------------------------
-local ipairs, math, minetest, nodecore
-    = ipairs, math, minetest, nodecore
+local ipairs, math, minetest, nodecore, ItemStack
+    = ipairs, math, minetest, nodecore, ItemStack
 local math_random
     = math.random
 -- LUALOCALS > ---------------------------------------------------------
@@ -54,24 +54,19 @@ local function hatchdone(pos, node)
 	return false
 end
 ------------------------------------------------------------------------
-nodecore.register_soaking_abm({
-		label = "peatle hatch",
-		fieldname = "hatch",
-		nodenames = {"nc_tree:peat"},
-		interval = 20,
-		soakrate = nodecore.tree_soil_rate,
-		soakcheck = function(data, pos)
-			local above = {x = pos.x, y = pos.y + 1, z = pos.z}
-			if data.total < hatchcost then return end
-			minetest.get_meta(pos):from_table({})
-			hatchdone(above, {name = modname .. ":peatle"})
-			local found = nodecore.find_nodes_around(pos, {"group:humus"}) --{"nc_tree:peat"})
-			if #found < 1 then return false end
-			nodecore.soaking_abm_push(nodecore.pickrand(found),
-				"hatch", data.total - hatchcost)
-			return false
-		end
-	})
+
+-- ================================================================== --
+
+minetest.override_item("nc_tree:peat", 
+	{drop = 
+		{items={
+					{items={modname..":peatle"},rarity=60},
+					{items={"nc_tree:peat"}}
+				}
+		}
+	}
+)
+
 -- ================================================================== --
 local function snufffx(pos)
 	nodecore.smokeburst(pos, 3)
