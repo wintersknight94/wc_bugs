@@ -103,14 +103,14 @@ termite_spread("nc_woodwork:plank",	modname.. ":plank_infested_1")
 
 termite_spread(modname.. ":tree_infested_4",	modname.. ":mound")
 termite_spread(modname.. ":root_infested_4",	modname.. ":mound")
-termite_spread(modname.. ":log_infested_4",	modname.. ":mound")
+termite_spread(modname.. ":log_infested_4",		modname.. ":mound")
 termite_spread(modname.. ":plank_infested_4",	modname.. ":mound")
 
 for i = 1,3 do
   termite_spread(modname.. ":tree_infested_" ..i,		modname.. ":tree_infested_" ..i+1)
   termite_spread(modname.. ":root_infested_" ..i,		modname.. ":root_infested_" ..i+1)
   termite_spread(modname.. ":log_infested_" ..i,		modname.. ":log_infested_" ..i+1)
-  termite_spread(modname.. ":plank_infested_" ..i,	modname.. ":plank_infested_" ..i+1)
+  termite_spread(modname.. ":plank_infested_" ..i,		modname.. ":plank_infested_" ..i+1)
 end
 -- ================================================================== --
 --minetest.register_decoration({
@@ -128,7 +128,7 @@ end
 local c_tree = minetest.get_content_id("nc_tree:tree")
 local c_termites = minetest.get_content_id(modname..":tree_infested_1")
 nodecore.register_mapgen_shared({
-  label = "snake spawn",
+  label = "termite spawn",
   func = function(minp, maxp, area, data, _, _, _, rng)
     local ai = area.index
     for z = minp.z, maxp.z do
