@@ -37,7 +37,7 @@ minetest.register_node(modname .. ":prillbug", {
 		bug = 1,
 		metallic = 1
 	},
-	sounds = nodecore.sounds("sound")
+	sounds = nodecore.sounds("nc_lode_annealed")
 })
 -- ================================================================== --
 minetest.override_item("nc_lode:ore", {drop = {items={{items={modname..":prillbug"},rarity=4}}}})

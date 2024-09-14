@@ -71,19 +71,22 @@ local function is_snake_eatable(pos,body)
       return 0,0.001
     end
     if node.name == "nc_terrain:gravel" or node.name == "nc_terrain:sand" or node.name == "nc_terrain:dirt" or node.name == "nc_terrain:dirt_with_grass" then
-      return fleaves,fleaves/1
+      return fleaves,fleaves/0.5
     end
     if node.name == "nc_terrain:stone" or node.name == "nc_concrete:sandstone" or node.name == "nc_concrete:adobe" or node.name == "nc_concrete:cloudstone" or node.name == "nc_concrete:coalstone" then
+      return fleaves,fleaves/1
+    end
+	if node.name == "nc_terrain:hard_stone_1" or node.name == "nc_terrain:hard_stone_2" or node.name == "nc_terrain:hard_stone_3" or node.name == "nc_terrain:hard_stone_4" or node.name == "nc_terrain:hard_stone_5" or node.name == "nc_terrain:hard_stone_6" or node.name == "nc_terrain:hard_stone_7" then
+      return fleaves,fleaves/1
+	end
+    if node.name == "nc_lode:stone" or node.name == "nc_lode:stone_1" or node.name == "nc_lode:stone_2" or node.name == "nc_lode:stone_3" or node.name == "nc_lode:stone_4" or node.name == "nc_lode:stone_5" or node.name == "nc_lode:stone_6" or node.name == "nc_lode:stone_7" then
       return fleaves,fleaves/2
     end
-    if node.name == "nc_lode:stone" or node.name == "nc_lode:stone_1" or node.name == "nc_lode:stone_2" or node.name == "nc_lode:stone_3" or node.name == "nc_lode:stone_4" or node.name == "nc_lode:stone_5" or node.name == "nc_lode:stone_6" then
-      return fleaves,fleaves/4
-    end
     if node.name == "nc_lode:ore" or node.name == "nc_lode:ore_1" or node.name == "nc_lode:ore_2" or node.name == "nc_lode:ore_3" then
-      return fpeat,fpeat/32
+      return fpeat,fpeat/8 --32
     end
     if node.name == "nc_lode:ore_4" or node.name == "nc_lode:ore_5" or node.name == "nc_lode:ore_6" or node.name == "nc_lode:ore_7" then
-      return fpeat,fpeat/64
+      return fpeat,fpeat/16 --64
     end
   end
 end
@@ -92,8 +95,8 @@ nodecore.is_snake_eatable = is_snake_eatable
 function nodecore.snake_attractiveness(pos)
   local node = minetest.get_node(pos)
   local score = 0
-  --local l = ((minetest.get_node_light(pos) or 0)/15*2-1) * 3
-  --score=score+l
+--  local l = ((minetest.get_node_light(pos) or 0)/15*2-1) * 3
+--  score=score+l
   local f,p = nodecore.is_snake_eatable(pos)
   if f then
     score = score + (f^2) * 100
@@ -133,7 +136,7 @@ local function eatsound(pos)
   local node = minetest.get_node(pos)
   local def = minetest.registered_items[node.name]
   if def.sounds and def.sounds.dug then
-    nodecore.sound_play(def.sounds.dug, {gain = 1, pos = pos})
+    nodecore.sound_play(def.sounds.dug, {gain = 4, pos = pos})
   end
 end
 

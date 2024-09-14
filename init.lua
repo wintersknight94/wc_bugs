@@ -33,3 +33,7 @@ if minetest.settings:get_bool(modname .. ".tremors", true) then
 	include("wurm_node")
 	include("wurm_gen")
 end
+
+if minetest.settings:get_bool(modname .. ".bugjars", true) then
+	include("bugjars")
+end

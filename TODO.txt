@@ -7,11 +7,8 @@
 - make damage only remove leeches when not in water
 - make peatles hide within soil nodes
 
-- either deprecate or functionalize still/calm luxmoth
-- rework prillbug species
-- add prillbug functionality/generation
-- add lodewurm nodes
-- lodewurm behavior (nc_snake-esc, burrowing)
-- prillbug and peatle escapades
+- rework lodeworms from the ground up
 
-- make certain bugs jarrable
+- grubs
+
+- glow grubs (gloom)

@@ -43,7 +43,7 @@ minetest.register_node(modname .. ":luxmoth", {
 		type = "fixed",
 		fixed = {-0.1, -0.1, -0.1, 0.1, 0.1, 0.1},
 	},
-	light_source = 3,
+	light_source = 4,
 	glow = 1,
 	max_stack = 1,
 	sounds = nodecore.sounds("nc_terrain_swishy")

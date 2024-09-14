@@ -6,3 +6,6 @@ wc_bugs.tremors (Lodewurms) bool true
 
 # If enabled, wood-eating termites will appear in your worlds. 
 wc_bugs.termites (Termites) bool true
+
+# If enabled, certain bugs will be catchable in jars.
+wc_bugs.bugjars (Bug Jars) bool true

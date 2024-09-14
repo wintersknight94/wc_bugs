@@ -98,7 +98,7 @@ minetest.register_node(modname .. ":torchbug_red", {
 		type = "fixed",
 		fixed = {-0.1, -0.1, -0.1, 0.1, 0.1, 0.1},
 	},
-	light_source = 2
+	light_source = 3
 })
 -- ================================================================== --
 -----------Blinking Behavior-----------
