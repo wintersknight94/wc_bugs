@@ -12,3 +12,5 @@
 - grubs
 
 - glow grubs (gloom)
+
+? remove wurms & grubs, split into separate mod, wc_wurms

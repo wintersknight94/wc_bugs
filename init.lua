@@ -5,10 +5,6 @@ local include, minetest, nodecore
 local modname = minetest.get_current_modname()
 ------------------------------------------------------------------------
 
-include("crawling")
-include("flying")
---include("burrowing")
-
 include("peatle")
 include("prillbug")
 include("stickbug")
